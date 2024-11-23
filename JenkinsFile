@@ -35,7 +35,7 @@ pipline
             {
                 script
                 {
-                    sh 'npm start'
+                    bat 'npm start'
                 }
             }
         }
@@ -45,7 +45,7 @@ pipline
             {
                 scrips
                 {
-                    sh 'npm test'
+                    bat 'npm test'
                 }
             }
         }

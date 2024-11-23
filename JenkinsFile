@@ -38,7 +38,7 @@ pipline
         {
             steps
             {
-                scrip
+                script
                 {
                     bat 'npm test'
                 }

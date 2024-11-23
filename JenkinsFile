@@ -1,0 +1,61 @@
+pipline
+{
+    agent any
+    
+    envoironment
+    {
+        NODE_VERSION = '20.x'
+    }
+    tools
+    {
+        nodejs "${NODE_VERSION}"
+    }
+    stages
+    {
+        stage("Checkout")
+        {
+            steps
+            {
+                checkout scm
+            }
+        }
+        stage("nstalling dependencies")
+        {
+            steps
+            {
+                script
+                {
+                    sh 'npm install'
+                }
+            }
+        }
+        stage("Starting App")
+        {
+            steps
+            {
+                script
+                {
+                    sh 'npm start'
+                }
+            }
+        }
+        stage("Run tests")
+        {
+            steps
+            {
+                scrips
+                {
+                    sh 'npm test'
+                }
+            }
+        }
+    }
+    post
+    {
+        always
+        {
+            echo "Completed"
+        }
+    }
+
+}   

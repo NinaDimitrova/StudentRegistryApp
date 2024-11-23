@@ -29,7 +29,17 @@ pipline
                 script
                 {
                     bat 'start /b npm start'
-                    bat 'wait on http://localhost:8080/students'
+                    
+                    
+                }
+            }
+        }
+        stage("Run test")
+        {
+            steps
+            {
+                scrip
+                {
                     bat 'npm test'
                 }
             }

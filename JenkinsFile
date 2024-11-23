@@ -40,7 +40,7 @@ pipline
             {
                 scrip
                 {
-                    bat 'npm test'
+                    bat 'start npm test'
                 }
             }
         }

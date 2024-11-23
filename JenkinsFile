@@ -16,7 +16,7 @@ pipline
         {
             steps
             {
-                checkout scm
+                git branch: 'main', url: 'https://github.com/NinaDimitrova/StudentRegistryApp'
             }
         }
         stage("nstalling dependencies")
@@ -25,30 +25,22 @@ pipline
             {
                 script
                 {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
-        stage("Starting App")
+        stage("Starting App and run tests")
         {
             steps
             {
                 script
                 {
-                    bat 'npm start'
-                }
-            }
-        }
-        stage("Run tests")
-        {
-            steps
-            {
-                scrips
-                {
+                    bat 'npm start &'
                     bat 'npm test'
                 }
             }
         }
+        
     }
     post
     {
